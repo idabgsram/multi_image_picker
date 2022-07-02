@@ -1,7 +1,3 @@
-## IMPORTANT: This repository has been archived and no longer mantained. As I don't have time anymore to work on the package it became very outdated. Fortunately there is a beter library which supports all of the functinalitites and even more: https://github.com/fluttercandies/flutter_wechat_assets_picker
-
-<br/>
-
 <h1 align="center">
   Flutter Multi Image Picker
   <br>
