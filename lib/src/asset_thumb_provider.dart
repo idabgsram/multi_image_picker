@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'dart:ui' as ui show instantiateImageCodec, Codec;
 import 'package:multi_image_picker/multi_image_picker.dart';
 
@@ -25,9 +24,8 @@ class AssetThumbImageProvider extends ImageProvider<AssetThumbImageProvider> {
     this.scale = 1.0,
   });
 
-  @override
   ImageStreamCompleter load(
-      AssetThumbImageProvider key, DecoderCallback decode) {
+      AssetThumbImageProvider key, ImageDecoderCallback decode) {
     return new MultiFrameImageStreamCompleter(
       codec: _loadAsync(key),
       scale: key.scale,
@@ -69,7 +67,7 @@ class AssetThumbImageProvider extends ImageProvider<AssetThumbImageProvider> {
 
   @override
   int get hashCode =>
-      hashValues(asset.identifier, scale, width, height, quality);
+      Object.hash(asset.identifier, scale, width, height, quality);
 
   @override
   String toString() => '$runtimeType(${asset.identifier}, scale: $scale, '
